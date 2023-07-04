@@ -89,7 +89,7 @@ model = hub.load("https://tfhub.dev/google/magenta/arbitrary-image-stylization-v
 
 # Logo
 col, col2, col3 = st.columns([0.4,1,0.4])
-st.image("./Design/logo.png", use_column_width=True)
+st.image("https://github.com/baselhusam/Stayalize-Me/blob/main/Design/Logo.png", use_column_width=True)
 new_line(1)
 
 # Description
