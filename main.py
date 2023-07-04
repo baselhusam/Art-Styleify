@@ -10,7 +10,11 @@ from PIL import Image
 
 from io import BytesIO
 
-st.set_page_config("Stayalize Me", page_icon="💃🏻")
+# Page Icon
+icon = Image.open("./Design/icon.png")
+st.set_page_config(page_title="Art Stylelify", page_icon=icon)
+
+# st.set_page_config("Art Stylelify", page_icon="💃🏻")
 
 # New Line Function
 def new_line(n=1):
@@ -83,24 +87,29 @@ def imgs_name_per_artist(artist):
 session_state()
 model = hub.load("https://tfhub.dev/google/magenta/arbitrary-image-stylization-v1-256/2")
 
-# Header
-st.markdown("<h1 align='center'> 💃🏻 Stayalize Me", unsafe_allow_html=True)
-new_line(2)
+# Logo
+col, col2, col3 = st.columns([0.4,1,0.4])
+st.image("./Design/logo.png", use_column_width=True)
+new_line(1)
 
 # Description
-st.write("Stayalize Me is a web app that helps you to find the best outfit for you. Just upload your picture and we will find the best outfit for you. ")
-st.divider()
+st.markdown("""Unleash your creativity with Art Styleify! Upload your image, choose an 
+art style, and watch the magic happen. Embrace iconic artistic aesthetics by Van 
+Gogh, Max Ernst, and more. Download and share your unique masterpieces effortlessly. 
+Express your inner artist today! ✨
 
-# define path
-path = "./assets/"
 
 
-# Intro
-st.write("This Application is to style your image with the style you want. The following are examples of the styles you can choose from. Below them, you can upload your own image and choose the style you want.")
+
+""", unsafe_allow_html=True)
 new_line(1)
 
 st.subheader("🎨 Examples")
 st.write("The following are examples of the styles you can choose from. Below them, you can upload your own image and choose the style you want.")          
+new_line(1)
+
+# define path
+path = "./assets/"
 
 data_df = pd.DataFrame(
     {
@@ -171,6 +180,7 @@ st.data_editor(
         ),
 
     }
+
 )
 
 # Image Selection
@@ -238,7 +248,7 @@ with col2:
     
 new_line(3)
 col1, col2, col3 = st.columns([1,1,1], gap='large')
-if col2.button("Staylize the Image:", use_container_width=True, ):
+if col2.button(" Make the Art 󠀽󠀽🖌️", use_container_width=True, ):
 
     # Prgoress Bar
     progress_bar = col2.progress(0)
