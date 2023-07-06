@@ -276,8 +276,8 @@ if col2.button(" Make the Art 󠀽󠀽🖌️", use_container_width=True, ):
     img = tensor_to_image(stylized_image)
     if img.size[0] < 500 or img.size[1] < 500:        
         img = img.resize((img.size[0]*2, img.size[1]*2))
-        img.save(buf, format="JPEG")
-        byte_im = buf.getvalue()
+    img.save(buf, format="JPEG")
+    byte_im = buf.getvalue()
 
     colx, coly, colz = st.columns([0.5,0.5,0.5], gap='large')
     with coly:
