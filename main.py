@@ -213,6 +213,7 @@ with col1:
             # Read image as pixels
             img = Image.open(uploaded_file)
             img = img.resize((img.size[0]*2, img.size[1]*2))
+            img = img.convert('RGB')
             img.save(uploaded_file.name, format="JPEG")
 
             st.image(uploaded_file, use_column_width=True)
@@ -237,6 +238,7 @@ with col2:
             # Read image as pixels
             img = Image.open(uploaded_file)
             img = img.resize((img.size[0]*2, img.size[1]*2))
+            img = img.convert('RGB')
             img.save(uploaded_file.name, format="JPEG")
             
             st.image(uploaded_file, use_column_width=True)
