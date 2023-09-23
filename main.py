@@ -223,7 +223,7 @@ with col1:
             st.session_state.style_img_name = uploaded_file.name
 
 # Content Image
-final_lst2 = ["Swan"] = imgs_path_content
+final_lst2 = ["Swan"] + imgs_path_content
 with col2:
     st.markdown("<h5 align='center'> Select Content Image </h3>", unsafe_allow_html=True)
     content_img = st.selectbox("Select the Content Image", final_lst2 + ["Upload Your Image"] )
