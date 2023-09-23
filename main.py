@@ -197,10 +197,10 @@ imgs_path_content = st.session_state.imgs_path_content
 imgs_path_style = st.session_state.imgs_path_style
 
 # Style Image
-final_lst = ["Van Gogh - The Starry Night"] + imgs_path_style
+final_lst1 = ["Van Gogh - The Starry Night"] + imgs_path_style
 with col1:
     st.markdown("<h5 align='center'> Select Style Image </h3>", unsafe_allow_html=True)
-    style_img = st.selectbox("Select the Style Image",  final_lst + ["Upload Your Image"] )
+    style_img = st.selectbox("Select the Style Image",  final_lst1 + ["Upload Your Image"] )
 
     if style_img != "Upload Your Image" :
         st.image(path + style_img  + ".jpg" , use_column_width=True)
@@ -223,9 +223,10 @@ with col1:
             st.session_state.style_img_name = uploaded_file.name
 
 # Content Image
+final_lst2 = ["Swan"] = imgs_path_content
 with col2:
     st.markdown("<h5 align='center'> Select Content Image </h3>", unsafe_allow_html=True)
-    content_img = st.selectbox("Select the Content Image", imgs_path_content + ["Upload Your Image"] )
+    content_img = st.selectbox("Select the Content Image", final_lst2 + ["Upload Your Image"] )
 
     if content_img != "Upload Your Image" :
         st.image(path + content_img + ".jpg", use_column_width=True)
